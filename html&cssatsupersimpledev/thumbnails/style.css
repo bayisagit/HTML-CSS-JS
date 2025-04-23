@@ -1,0 +1,12 @@
+.thumnail{
+    width: 300px;
+    display: block ;
+}
+.a{
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+.searchbar{
+    display: block;
+}

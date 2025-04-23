@@ -1,0 +1,58 @@
+/* General grid layout */
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content and sidebar */
+    gap: 10px;
+}
+
+.main-content {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.sidebar {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 740px) {
+    .content {
+        grid-template-columns: 1fr; /* Stack main content and sidebar */
+    }
+
+    .sidebar {
+        order: 1; /* Show sidebar below main content */
+    }
+
+    .main-content {
+        order: 0;
+    }
+}

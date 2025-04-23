@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Add Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        #myDiv {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: white;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="addButton">Add Paragraph</button>
+    <div id="myDiv"></div>
+
+    <script>
+        const button = document.getElementById('addButton');
+        const myDiv = document.getElementById('myDiv');
+
+        button.addEventListener('click', function() {
+            // Create a new <p> element
+            const newParagraph = document.createElement('p');
+            // Add some text to the <p> element
+            newParagraph.textContent = 'This is a new paragraph!';
+            // Append the <p> element to the <div>
+            myDiv.appendChild(newParagraph);
+        });
+    </script>
+
+</body>
+</html>

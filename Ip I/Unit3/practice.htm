@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header_n {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+        .header-title-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .hero_nav {
+            display: none; /* Hide menu by default on small screens */
+        }
+        .hero_nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .hero_nav ul li {
+            padding: 10px 0;
+        }
+        .hero_nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .active {
+            font-weight: bold;
+        }
+        
+        /* Responsive Styles */
+        @media (min-width: 600px) {
+            .hero_nav {
+                display: block; /* Show menu on larger screens */
+            }
+            .menu-button {
+                display: none; /* Hide button on larger screens */
+            }
+        }
+        
+        /* Show nav when the menu button is clicked */
+        input[type="checkbox"] {
+            display: none; /* Hide checkbox */
+        }
+        input[type="checkbox"]:checked ~ .hero_nav {
+            display: block; /* Show the nav */
+        }
+    </style>
+</head>
+<body>
+
+<header class="header_n">
+    <section class="header-title-line">
+        <h1 class="logo_n">TDPSchool</h1>
+        <label class="menu-button" for="menu-toggle">
+            <div class="menu-icon"><i class="fa fa-bars"></i></div>
+            <div class="close-icon"><i class="fa fa-times" style="display: none;"></i></div>
+        </label>
+        <input type="checkbox" id="menu-toggle">
+    </section>
+    <nav class="hero_nav">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="announcement.html">Announcement</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul> 
+    </nav>
+</header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeIcon = document.querySelector('.close-icon');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    menuToggle.addEventListener('change', function() {
+        if (this.checked) {
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        } else {
+            menuIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
+</body>
+</html>

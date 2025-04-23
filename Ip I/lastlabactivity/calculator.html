@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 200px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        #error {
+            color: red;
+            display: none;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div id="calculator">
+        <input type="number" id="num1" placeholder="Enter first number" required/>
+        <input type="number" id="num2" placeholder="Enter second number" required/>
+        <br>
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button>
+        <p id="error">Error: Please enter valid numbers in both fields!</p>
+        <p id="result">Result:</p>
+    </div>
+    <script>
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const resultDisplay = document.getElementById('result');
+        const errorDisplay = document.getElementById('error');
+
+        const validateInputs = () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            if (isNaN(num1) || isNaN(num2)) {
+                errorDisplay.style.display = 'block';
+                resultDisplay.textContent = 'result:';
+                return false;
+            }
+            errorDisplay.style.display = 'none';
+            return { num1, num2 };
+        };
+
+        document.getElementById('add').onclick = () => {
+            const inputs = validateInputs();
+            if (inputs) {
+                resultDisplay.textContent = `Result: ${inputs.num1 + inputs.num2}`;
+            }
+        };
+
+        document.getElementById('subtract').onclick = () => {
+            const inputs = validateInputs();
+            if (inputs) {
+                resultDisplay.textContent = `Result: ${inputs.num1 - inputs.num2}`;
+            }
+        };
+
+        document.getElementById('multiply').onclick = () => {
+            const inputs = validateInputs();
+            if (inputs) {
+                resultDisplay.textContent = `Result: ${inputs.num1 * inputs.num2}`;
+            }
+        };
+
+        document.getElementById('divide').onclick = () => {
+            const inputs = validateInputs();
+            if (inputs) {
+                if (inputs.num2 === 0) {
+                    errorDisplay.textContent = 'Error: Division by zero!';
+                    errorDisplay.style.display = 'block';
+                    resultDisplay.textContent = 'Result:';
+                } else {
+                    resultDisplay.textContent = `Result: ${inputs.num1 / inputs.num2}`;
+                }
+            }
+        };
+    </script>
+</body>
+</html>

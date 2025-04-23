@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 16%;
+    background: #673AB7;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.sidebar ul li {
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar ul li.active, .sidebar ul li:hover {
+    background: #512DA8;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+}
+.logo h2 {
+    font-size: 60px; /* Increase the icon size */
+    width: auto;
+    height: auto;
+}
+
+
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Header */
+.schol {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 34px;
+    padding-left: 400px;
+}
+
+
+.user {
+    border-radius: 5px;
+    padding: 15px;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user span {
+    margin-right: 10px;
+}
+.user span i{
+    margin-right: 10px;
+}
+
+.logout {
+    padding: 5px 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dashboard */
+.dashboard {
+    margin-top: 20px;
+}
+
+.dashboard h2 {
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Card Colors */
+.green { background: #4CAF50; }
+.orange { background: #FF9800; }
+.blue { background: #2196F3; }
+.black { background: #333; }
+.teal { background: #009688; }
+.purple { background: #9C27B0; }
+.brown { background: #795548; }
+.pink { background: #E91E63; }
+.cyan { background: #00BCD4; }

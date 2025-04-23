@@ -1,0 +1,227 @@
+/* Name : Beimnet Tadesse */
+/* ETS 0217/15 */
+
+
+:root {
+    --main-color: #1a2e44;  
+    --header-bg: #343a40; 
+    --footer-bg: #343a40; 
+    --text-color: #f8f9fa; 
+    --highlight-color: #495057; 
+    --font-size-large: 1.5rem;
+    --font-size-small: 0.9rem;
+    --even-bg: #e9ecef; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(135deg, #1a2e44, #495057);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    height: 70px;
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+}
+
+header h1 {
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: underline;
+    color: var(--text-color);
+    font-size: var(--font-size-small);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+nav ul li a::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+}
+
+nav ul li a:hover {
+    text-shadow: 1px 1px 3px #ffffff;
+    text-decoration: wavy;
+    color: var(--highlight-color);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    counter-reset: article-counter;
+}
+
+article {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+article h2 {
+    color: var(--main-color);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+article::before {
+    color: var(--main-color);
+    counter-increment: article-counter;
+    content: "Article " counter(article-counter) ": ";
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+article img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+article ul {
+    padding: 0;
+    list-style: none;
+}
+
+article ul li {
+    padding-left: 20px;
+    position: relative;
+    color: var(--highlight-color);
+}
+
+article ul li::before {
+    content: '✔';
+    color: var(--main-color);
+    position: absolute;
+    left: 0;
+}
+
+article ul li:nth-child(even) {
+    background-color: #dfe2e6;
+}
+
+article:nth-child(1) {
+    border: 3px solid #1a2e44;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px 20px;
+    align-items: flex-end;
+}
+
+footer p {
+    font-size: var(--font-size-small);
+    margin: 0;
+}
+
+.overflow-box {
+    background-color: green;   
+    width: 90%;   
+    max-width: 800px;  
+    height: 150px;  
+    overflow-y: scroll;   
+    padding: 20px;   
+    text-align: justify;  
+    margin: 30px auto; 
+    border: 3px solid #1a2e44;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article img {
+        display: none;
+    }
+}
+
+@media print {
+    article img {
+        display: none;
+    }
+}
+
+
+/* Css for Home About and Contact sections */
+
+main.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 60vh;  
+    padding: 0;
+    background: linear-gradient(135deg, #e9ecef, #dfe2e6);
+    text-align: center;
+}
+
+main.about section {
+    max-width: 600px;  
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main.about section h2 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+main.about section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--highlight-color);
+}
+
+
+ 
